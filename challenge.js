@@ -29,36 +29,63 @@ console.log(userInput);
 
 //Hard
 
-let num1 = parseInt(prompt(`Enter First Number`));
-let num2 = parseInt(prompt(`Enter Second Number`));
+let num1 = parseFloat();
+let num2 = parseFloat();
+
+
+
+num1 = parseFloat(prompt(`Enter First Number`));
+num2 = parseFloat(prompt(`Enter Second Number`));
 
 const add = num1 + num2
 
 console.log(alert(add))
 
-
-num1 = parseInt(prompt(`Enter First Number`));
-num2 = parseInt(prompt(`Enter Second Number`));
+num1 = parseFloat(prompt(`Enter First Number`));
+num2 = parseFloat(prompt(`Enter Second Number`));
 
 const subtract = num1 - num2
 
 console.log(alert(subtract))
 
-
-num1 = parseInt(prompt(`Enter First Number`));
-num2 = parseInt(prompt(`Enter Second Number`));
+num1 = parseFloat(prompt(`Enter First Number`));
+num2 = parseFloat(prompt(`Enter Second Number`));
 
 const multiply = num1 * num2
 
 console.log(alert(multiply))
 
 
-num1 = parseInt(prompt(`Enter First Number`));
-num2 = parseInt(prompt(`Enter Second Number`));
+num1 = parseFloat(prompt(`Enter First Number`));
+num2 = parseFloat(prompt(`Enter Second Number`));
 
 const divide = num1 / num2
 
 console.log(alert(divide))
 
 
+
 //Very Hard
+
+const operator = prompt(`What operation? (+, - ,* , or /)`)
+
+num1 = parseFloat(prompt(`Enter First Number`));
+num2 = parseFloat(prompt(`Enter Second Number`));
+
+
+let result;
+
+if (operator == `+`) {
+    result = num1 + num2;
+}
+else if (operator == `-`) {
+    result = num1 - num2;
+}
+else if (operator == `*`) {
+    result = num1 * num2;
+}
+else if (operator == `/`) {
+    result = num1 / num2;
+}
+
+console.log(alert(`${num1}${operator}${num2} = ${result}`));
