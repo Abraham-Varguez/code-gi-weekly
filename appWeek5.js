@@ -1,3 +1,5 @@
+'strict mode'
+
 //Easy
 //  Arrow Functions Closure
 // const exercising = x => (y) => `Exercising Today: ${x} Minutes Rested: ${y}`
@@ -33,46 +35,85 @@ console.log(sharePizza(3))
 
 //Hard
 //ENCAPSULATION!!
-const pii = {
 
-    constructor() {
-        let ssn
-        let name
-    },
+class Pii {
+    #ssn;
+    constructor(name, ssn) {
+        this.name = name;
+        this.#ssn = ssn;
 
 
-    getName: function () {
-        return this.name
-    },
-    setName: function () {
-        return this.name = name
-    },
-
-    getSSN: function () {
-        return this.ssn;
-    },
-    setSSN: function () {
-        this.ssn = ssn;
     }
 
-};
+    getSSN() {
+        return this.#ssn
+    }
 
-const ssn = new pii();
-ssn.setSSN(String(prompt()))
+}
 
+let abraham = new Pii('Abraham', '123-45-6789');
 
-//
 
 //Very Hard
 
-// const personNumeroUno = {
+class Person {
+    constructor(name, job, age) {
+        this.name = name;
+        this.job = job;
+        this.age = age;
+    }
+    exercise(x) {
+        return console.log(`${this.name} jumps into the Pool`)
+    };
+    fetchJob() {
+        return console.log(`${this.name} is a ${this.job}`)
+    };
+}
 
-//     name: 'Abraham'
-// job: 'Pharmacy Technician'
-// age: 24
+let person01 = new Person('Abraham', 'Student', 24);
+
+person01.exercise()
+person01.fetchJob()
 
 
 
+class Programmer extends Person {
+    constructor(name, job, age, language) {
+        super(name, job, age);
+        this.language = language;
+        this.busy = true;
+        this.listLanguages = ['English']
+
+    }
+
+    completeTask() {
+        this.busy = false
+        return this;
+    };
+    acceptTask() {
+        this.busy = true
+        return this;
+    }
+    offerNewTask() {
+
+        if (this.busy = true) {
+            console.log(`${this.name} is not available to accept tasks, try again later...`)
+        } else {
+            console.log(`${this.name} is available for a new task`)
+        }
+    };
+
+    learnLanguage(val) {
+        this.listLanguages.push(val)
+
+    }
 
 
-// }
+}
+
+let programmer01 = new Programmer('Abraham', 'Microsoft', 25, 'English')
+
+programmer01.acceptTask().offerNewTask()
+
+programmer01.learnLanguage('Spanish')
+console.log(programmer01.listLanguages)
